@@ -3,41 +3,35 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@520&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/output.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!--META TAG OG-->
-    <meta property="og:type" content="website"/>   
-    <meta property="og:title" content="Confeitaria Gasparini - A Doçura de Votuporanga."/>   
-    <meta property="og:image" content=""/>   
-    <meta property="og:description" content="A Confeitaria Gasparini traz doçuras irresistíveis e momentos especiais em Votuporanga."/>   
-    <meta property="og:site_name" content="Confeitaria Gasparini."/>   
-
-    <link rel="stylesheet" href="./styles/output.css"/>
-    <title>HAMBURGUERIA</title>
+    <title>GASPARINI CONFEITOS</title>
 </head>
 
 <body>
 
     <!--HEADER-->
-    <header style="background-image: url(./assets/bg.png);" class="w-full h-[420px] bg-zinc-900 bg-cover bg-center">
+    <header style="background-image: url(./assets/bn1.png);" class="w-full h-[420px] bg-zinc-900 bg-cover bg-center">
         <div class="w-full h-full flex flex-col justify-center items-center">
-            <img src="./assets/hamb-1.png" alt="Logo Hamburguer"
-                class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200" />
-            <h1 class="text-4xl text-white mt-4 mb-2 font-bold">Hamburgueria</h1>
+            <!-- <img src="./assets/lg.png" alt="Logo"
+                class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200" /> -->
+            <h1 class="text-5xl text-black mt-4 mb-2 font-Bebas-Neue font-bold">GASPARINI CONFEITARIA</h1>
 
-            <span class="text-white font-medium">
-                Rua Teste
+            <span class="text-black font-Oswald font-bold text-base">
+                Rua Dr Joaquin Franco Garcia Nº1750, Votuporanga - SP
             </span>
 
             <div class="bg-green-600 px-4 py-1 rounded-lg mt-5" id="date-span">
-                <span class="text-white font-medium"> Seg á Dom 18:00 ás 22:00</span>
+                <span class="text-white font-medium"> Seg á Sab 08:00 ás 18:00</span>
             </div>
         </div>
     </header>
@@ -48,23 +42,21 @@
     <!--começo Menu-->
     <div id="menu">
 
-        <main class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto mh-7xl px-2 mb-16">
+        <main class="grid grid-cols-1 md:grid-cols-3 gap-7 md:gap-10 mx-auto mh-7xl px-2 mb-16">
 
             <!--Produto Item-->
-            <div class="flex gap-2">
-                <img src="./assets/hamb-1.png" alt="Hamburguer 1"
+            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
+                <img src="./assets/BoloBrig.png" alt="Bolo de Brigadeiro"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
 
                 <div>
-                    <p class="font-bold">Hamburguer 1</p>
-                    <p class="text-sm">Um suculento hambúrguer de carne bovina, grelhado na perfeição, coberto com
-                        queijo
-                        cheddar derretido,
-                        alface crocante, tomate fresco e uma fatia de cebola roxa.</p>
+                    <p class="font-bold">Bolo de Brigaderio <strong>(Encomenda)</strong></p>
+                    <p class="text-sm">Bolo de Brigadeiro com granulado tradicional
+                    <p>
                     <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$ 18.00</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Hamburguer 1"
-                            data-price="18.00">
+                        <p class="font-bold text-lg">R$ 30.00</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Bolo de Brigadeiro"
+                            data-price="30.00">
                             <i class="fa fa-cart-plus text-lg text-white"></i>
                         </button>
                     </div>
@@ -73,20 +65,93 @@
             <!--Fim Produto Item-->
 
             <!--Produto Item-->
-            <div class="flex gap-2">
-                <img src="./assets/hamb-2.png" alt="Hamburguer 2"
+            <div class="flex gap-2  max-w-xl hover:bg-gray-300 rounded-lg">
+                <img src="./assets/BoloBrigGranuladoColor.png" alt="Bolo de Brigadeiro Colorido"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
 
                 <div>
-                    <p class="font-bold">Hamburguer 2</p>
-                    <p class="text-sm">
-                        Peito de frango empanado e frito até ficar crocante, servido com alface
-                        americana, tomate maduro, maionese temperada com ervas e um toque de molho de pimenta, tudo
-                        dentro de um pão macio de batata.
-                    </p>
+                    <p class="font-bold">Bolo de Brigadeiro <strong>(Encomenda)</strong></p>
+                    <p class="text-sm">Bolo de brigadeiro com granulado colorido</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 30.00</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Bolo de brigadeiro granulado colorido" data-price="30.00">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--Fim Produto Item-->
+
+            <!--Produto Item-->
+            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
+                <img src="./assets/BoloBrigComMorang.png" alt="Bolo de brgadeiro com morango"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
+
+                <div>
+                    <p class="font-bold">Bolo de brigadeiro <strong>(Encomenda)</strong></p>
+                    <p class="text-sm">Bolo de brigadeiro com granulado tradicional e com pedaços de morangos</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 45.00</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Bolo de brigadeiro com morango" data-price="45.00">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--Fim Produto Item-->
+
+            <!--Produto Item-->
+            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
+                <img src="./assets/BoloLimao.png" alt="Bolo de limão"
+                    class="w-28 h-30 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
+
+                <div>
+                    <p class="font-bold">Bolo de limão <strong>(Encomenda)</strong></p>
+                    <p class="text-sm">Bolo de limão com mouse de limão e raspas de limão</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg mt-4">R$ 30.00</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Bolo de limão"
+                            data-price="30.00">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--Fim Produto Item-->
+
+            <!--Produto Item-->
+            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
+                <img src="./assets/CremePada.png" alt="Creme de Padaria"
+                    class="w-28 h-30 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
+
+                <div>
+                    <p class="font-bold">Creme de padaria <strong>(Encomenda)</strong></p>
+                    <p class="text-sm">Uma sobremesa cremosa e doce, feita com leite, açúcar, ovos e farinha</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg mt-2">R$ 20.00</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn mt-2"  data-name="Creme de padaria"
+                            data-price="20.00">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--Fim Produto Item-->
+
+            <!--Produto Item-->
+            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
+                <img src="./assets/Pudim.png" alt="Pudim de leite condensado"
+                    class="w-28 h-30 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
+
+                <div>
+                    <p class="font-bold">Pudim de leite condensado <strong>(Encomenda)</strong></p>
+                    <p class="text-sm">Uma sobremesa suave e doce, feita com leite condensado, ovos e açúcar, com uma
+                        camada de caramelo.</p>
                     <div class="flex items-center gap-2 justify-between mt-3">
                         <p class="font-bold text-lg">R$ 25.00</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Hamburguer 2"
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Pudim de leite condensado"
                             data-price="25.00">
                             <i class="fa fa-cart-plus text-lg text-white"></i>
                         </button>
@@ -96,21 +161,17 @@
             <!--Fim Produto Item-->
 
             <!--Produto Item-->
-            <div class="flex gap-2">
-                <img src="./assets/hamb-3.png" alt="Hamburguer 3"
-                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
+            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
+                <img src="./assets/Rosca.png" alt="Rosca"
+                    class="w-28 h-30 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
 
                 <div>
-                    <p class="font-bold">Hamburguer 3</p>
-                    <p class="text-sm">
-                        Um hambúrguer feito de grão-de-bico temperado com especiarias, coberto com queijo feta, fatias
-                        de abacate, rúcula fresca e uma generosa porção de molho tahine. Servido em um pão integral com
-                        sementes de gergelim.
-                    </p>
+                    <p class="font-bold">Rosca</p>
+                    <p class="text-sm">Uma rosca macia e doce, feita com leite condensado, coco e creme confeiteiro,
+                        ideal para um lanche ou café da manhã especial.</p>
                     <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$ 22.00</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Hamburguer 3"
-                            data-price="22.00">
+                        <p class="font-bold text-lg">R$ 8.00</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Rosca" data-price="8.00">
                             <i class="fa fa-cart-plus text-lg text-white"></i>
                         </button>
                     </div>
@@ -119,21 +180,124 @@
             <!--Fim Produto Item-->
 
             <!--Produto Item-->
-            <div class="flex gap-2">
-                <img src="./assets/hamb-4.png" alt="Hamburguer 4"
-                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
+            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
+                <img src="./assets/PaoC.png" alt="Pão caseiro assado"
+                    class="w-28 h-30 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
 
                 <div>
-                    <p class="font-bold">Hamburguer 4</p>
-                    <p class="text-sm">
-                        Hambúrguer de carne bovina suculenta coberta com queijo cheddar, bacon crocante, cebola
-                        caramelizada e molho barbecue defumado, servido em um pão brioche levemente tostado, com picles
-                        e alface americana.
-                    </p>
+                    <p class="font-bold">Pão caseiro</p>
+                    <p class="text-sm">Um pão macio e aromático, feito com ingredientes simples como farinha, água,
+                        fermento e sal, assado até obter uma crosta dourada e uma textura leve por dentro.
+                    <p>
                     <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$ 30.00</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Hamburguer 4"
-                            data-price="30.00">
+                        <p class="font-bold text-lg">R$ 15.00</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Pão caseiro"
+                            data-price="15.00">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--Fim Produto Item-->
+
+            <!--Produto Item-->
+            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
+                <img src="./assets/PaoCasCong.png" alt="Pão caseiro congelado"
+                    class="w-28 h-230 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
+
+                <div>
+                    <p class="font-bold">Pão caseiro congelado (10 uni)</p>
+                    <p class="text-sm">Pão caseiro, preparado e congelado, que pode ser assado diretamente do freezer
+                        para obter uma textura fresca e macia com crosta dourada.
+                    <p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 21.00</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Pão caseiro congelado (10 uni)" data-price="21.00">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--Fim Produto Item-->
+
+            <!--Produto Item-->
+            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
+                <img src="./assets/PaoQueijo.png" alt="Pão de queijo"
+                    class="w-28 h-30 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
+
+                <div>
+                    <p class="font-bold">Pão de queijo tradicional 1KG</p>
+                    <p class="text-sm">Pacote contendo 1 kg de pão de queijo congelado, pronto para assar e desfrutar de
+                        pequenas delícias crocantes e macias, feitas com queijo e polvilho.
+                    <p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg mt-4">R$ 20.00</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn mt-4"
+                            data-name="Pão de queijo tradicional 1KG" data-price="20.00">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--Fim Produto Item-->
+
+            <!--Produto Item-->
+            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
+                <img src="./assets/CoxiFrango.png" alt="Coxinha de frango"
+                    class="w-28 h-30 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
+
+                <div>
+                    <p class="font-bold">Coxinha de frango 500g</p>
+                    <p class="text-sm">Pacote com 500 g de coxinhas de frango congeladas, prontas para fritar e servir
+                        como um petisco crocante e saboroso.
+                    <p>
+                    <div class="flex items-center justify-between mt-0">
+                        <p class="font-bold text-lg">R$ 18.00</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Coxinha de frango 500g"
+                            data-price="18.00">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--Fim Produto Item-->
+
+            <!--Produto Item-->
+            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
+                <img src="./assets/BoliQueijo.png" alt="Bolinha de queijo"
+                    class="w-28 h-30 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
+
+                <div>
+                    <p class="font-bold">Bolinha de queijo 500g</p>
+                    <p class="text-sm">Pacote com 500 g de bolinhas de queijo congeladas, ideais para fritar e saborear
+                        como um aperitivo delicioso.
+                    <p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 18.00</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Bolinha de queijo 500g"
+                            data-price="18.00">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--Fim Produto Item-->
+
+            <!--Produto Item-->
+            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
+                <img src="./assets/MiniEsfihaFrango.png" alt="Mini esfiha de frango"
+                    class="w-28 h-30 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
+
+                <div>
+                    <p class="font-bold">Mini esfiha de frango 500g</p>
+                    <p class="text-sm">Pacote com 500 g de esfihas de carne congeladas, perfeitas para aquecer no
+                        micro-ondas e desfrutar de um lanche prático e saboroso.
+                    <p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 18.00</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Mini esfiha de frango 500g" data-price="18.00">
                             <i class="fa fa-cart-plus text-lg text-white"></i>
                         </button>
                     </div>
@@ -143,58 +307,11 @@
 
         </main>
 
-        <div class="mx-auto max-w-7xl px-2 my-2">
-            <h2 class="font-bold text-3xl">
-                Bebidas
-            </h2>
-        </div>
-        <!---Grid Bebidas-->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto mh-7xl px-2 mb-16" id="menu">
-
-            <!--Bebida Item-->
-            <div class="flex gap-2 w-full">
-                <img src="./assets/refri-1.png" alt="Refri 1"
-                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
-
-                <div class="w-full">
-                    <p class="font-bold">Refri 1</p>
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$ 8.00</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Refri 1" data-price="8.00">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!--Fim Bebida Item-->
-
-            <!--Bebida Item-->
-            <div class="flex gap-2 w-full">
-                <img src="./assets/refri-2.png" alt="Refri 1"
-                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
-
-                <div class="w-full">
-                    <p class="font-bold">Refri 2</p>
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$ 6.00</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Refri 2" data-price="6.00">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!--Fim Bebida Item-->
-
-        </div>
-        <!---Fim Grid Bebidas-->
-
     </div>
     <!--fim Menu-->
 
     <!--Modal Cart-->
-    <div class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden"
-        id="cart-modal"
-    >
+    <div class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden" id="cart-modal">
         <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
             <h2 class="text-center font-bold text-2xl mb-2">Meu Carrinho</h2>
 
@@ -209,7 +326,7 @@
 
             <div class="flex items-center justify-between mt-5 w-full">
                 <button id="close-modal-btn">Fechar</button>
-            <button id="chekout-btn" class="bg-green-500 text-white px-4 py-1 rounded">Finalizar Pedido</button>
+                <button id="chekout-btn" class="bg-green-500 text-white px-4 py-1 rounded">Finalizar Pedido</button>
             </div>
         </div>
     </div>
