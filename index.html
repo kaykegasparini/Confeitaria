@@ -1,348 +1,370 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@520&family=Roboto:wght@400;500;700&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="./styles/output.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="styles/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="icon" href="assets/logo.png" type="image/x-icon">
     <title>GASPARINI CONFEITOS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        .font-pacifico {
+            font-family: 'Pacifico', cursive;
+        }
+    </style>
 </head>
 
-<body>
-
-    <!--HEADER-->
-    <header style="background-image: url(./assets/bn1.png);" class="w-full h-[420px] bg-zinc-900 bg-cover bg-center">
-        <div class="w-full h-full flex flex-col justify-center items-center">
-            <!-- <img src="./assets/lg.png" alt="Logo"
-                class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200" /> -->
-            <h1 class="text-5xl text-black mt-4 mb-2 font-Bebas-Neue font-bold">GASPARINI CONFEITARIA</h1>
-
-            <span class="text-black font-Oswald font-bold text-base">
-                Rua Dr Joaquin Franco Garcia Nº1750, Votuporanga - SP
-            </span>
-
-            <div class="bg-green-600 px-4 py-1 rounded-lg mt-5" id="date-span">
-                <span class="text-white font-medium"> Seg á Sab 08:00 ás 18:00</span>
+<body class="bg-gradient-to-r from-pink-100 to-purple-100 min-h-screen">
+    <header class="bg-white shadow-lg">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex-1 text-3xl font-bold font-pacifico text-pink-600">
+                    Gasparini Confeitos
+                </div>
+                <div class="flex-1 md:flex md:justify-center items-center space-x-6">
+                    <a href="#menu" class="text-gray-700 hover:text-pink-600 transition duration-300">Menu</a>
+                    <a href="#about" class="text-gray-700 hover:text-pink-600 transition duration-300">Sobre</a>
+                    <a href="#contact" class="text-gray-700 hover:text-pink-600 transition duration-300">Contato</a>
+                    <a href="#location" class="text-gray-700 hover:text-pink-600 transition duration-300">Localizaçâo</a>
+                </div>
+                <div class="flex-1 flex justify-end items-center">
+                    <button id="cart-btn"
+                        class="bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700 transition duration-300">
+                        <i class="fas fa-shopping-cart mr-2"></i>
+                        <span id="cart-count">0</span>
+                    </button>
+                </div>
             </div>
-        </div>
+        </nav>
     </header>
-    <!--FIM HEADER-->
 
-    <h2 class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6">Conheça nosso menu</h2>
+    <main class="container mx-auto px-6 py-8">
+        <section class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-gray-800">Delícias Artesanais</h1>
+            <p class="text-xl text-gray-600">Saboreie a doçura da vida com nossos confeitos especiais</p>
+        </section>
 
-    <!--começo Menu-->
-    <div id="menu">
+        <section id="menu" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Nosso Menu</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Bolo de Brigadeiro -->
+                <div
+                    class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="./assets/BoloBrig.png" alt="Bolo de Brigadeiro" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Bolo de Brigadeiro</h3>
+                        <p class="text-gray-600 mb-4">Bolo de Brigadeiro com granulado tradicional</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-pink-600">R$ 30,00</span>
+                            <button
+                                class="bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700 transition duration-300 add-to-cart-btn"
+                                data-name="Bolo de Brigadeiro" data-price="30.00">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-        <main class="grid grid-cols-1 md:grid-cols-3 gap-7 md:gap-10 mx-auto mh-7xl px-2 mb-16">
+                <!-- Bolo de Brigadeiro Colorido -->
+                <div
+                    class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="./assets/BoloBrigGranuladoColor.png" alt="Bolo de Brigadeiro Colorido"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Bolo de Brigadeiro Colorido</h3>
+                        <p class="text-gray-600 mb-4">Bolo de brigadeiro com granulado colorido</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-pink-600">R$ 30,00</span>
+                            <button
+                                class="bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700 transition duration-300 add-to-cart-btn"
+                                data-name="Bolo de brigadeiro granulado colorido" data-price="30.00">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-            <!--Produto Item-->
-            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
-                <img src="./assets/BoloBrig.png" alt="Bolo de Brigadeiro"
-                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
+                <!-- Bolo de Brigadeiro com Morango -->
+                <div
+                    class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="./assets/BoloBrigComMorang.png" alt="Bolo de brigadeiro com morango"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Bolo de Brigadeiro com Morango</h3>
+                        <p class="text-gray-600 mb-4">Bolo de brigadeiro com granulado tradicional e pedaços de morangos
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-pink-600">R$ 45,00</span>
+                            <button
+                                class="bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700 transition duration-300 add-to-cart-btn"
+                                data-name="Bolo de brigadeiro com morango" data-price="45.00">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-                <div>
-                    <p class="font-bold">Bolo de Brigaderio <strong>(Encomenda)</strong></p>
-                    <p class="text-sm">Bolo de Brigadeiro com granulado tradicional
-                    <p>
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$ 30.00</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Bolo de Brigadeiro"
-                            data-price="30.00">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
-                        </button>
+                <!-- Bolo de Limão -->
+                <div
+                    class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="./assets/BoloLimao.png" alt="Bolo de limão" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Bolo de Limão</h3>
+                        <p class="text-gray-600 mb-4">Bolo de limão com mousse de limão e raspas de limão</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-pink-600">R$ 30,00</span>
+                            <button
+                                class="bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700 transition duration-300 add-to-cart-btn"
+                                data-name="Bolo de limão" data-price="30.00">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creme de Padaria -->
+                <div
+                    class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="./assets/CremePada.png" alt="Creme de Padaria" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Creme de Padaria</h3>
+                        <p class="text-gray-600 mb-4">Sobremesa cremosa e doce, feita com leite, açúcar, ovos e farinha
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-pink-600">R$ 20,00</span>
+                            <button
+                                class="bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700 transition duration-300 add-to-cart-btn"
+                                data-name="Creme de padaria" data-price="20.00">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pudim de Leite Condensado -->
+                <div
+                    class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="./assets/Pudim.png" alt="Pudim de leite condensado" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Pudim de Leite Condensado</h3>
+                        <p class="text-gray-600 mb-4">Sobremesa suave e doce, feita com leite condensado, ovos e açúcar,
+                            com camada de caramelo</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-pink-600">R$ 25,00</span>
+                            <button
+                                class="bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700 transition duration-300 add-to-cart-btn"
+                                data-name="Pudim de leite condensado" data-price="25.00">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rosca -->
+                <div
+                    class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="./assets/Rosca.png" alt="Rosca" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Rosca</h3>
+                        <p class="text-gray-600 mb-4">Rosca macia e doce, feita com leite condensado, coco e creme
+                            confeiteiro</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-pink-600">R$ 8,00</span>
+                            <button
+                                class="bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700 transition duration-300 add-to-cart-btn"
+                                data-name="Rosca" data-price="8.00">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pão Caseiro -->
+                <div
+                    class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="./assets/PaoC.png" alt="Pão caseiro assado" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Pão Caseiro</h3>
+                        <p class="text-gray-600 mb-4">Pão macio e aromático, feito com ingredientes simples, com crosta
+                            dourada</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-pink-600">R$ 15,00</span>
+                            <button
+                                class="bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700 transition duration-300 add-to-cart-btn"
+                                data-name="Pão caseiro" data-price="15.00">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pão Caseiro Congelado -->
+                <div
+                    class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="./assets/PaoCasCong.png" alt="Pão caseiro congelado" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Pão Caseiro Congelado (10 uni)</h3>
+                        <p class="text-gray-600 mb-4">Pão caseiro congelado, pronto para assar</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-pink-600">R$ 21,00</span>
+                            <button
+                                class="bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700 transition duration-300 add-to-cart-btn"
+                                data-name="Pão caseiro congelado (10 uni)" data-price="21.00">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pão de Queijo -->
+                <div
+                    class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="./assets/PaoQueijo.png" alt="Pão de queijo" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Pão de Queijo Tradicional 1KG</h3>
+                        <p class="text-gray-600 mb-4">Pacote de 1 kg de pão de queijo congelado, pronto para assar</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-pink-600">R$ 20,00</span>
+                            <button
+                                class="bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700 transition duration-300 add-to-cart-btn"
+                                data-name="Pão de queijo tradicional 1KG" data-price="20.00">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coxinha de Frango -->
+                <div
+                    class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="./assets/CoxiFrango.png" alt="Coxinha de frango" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Coxinha de Frango 500g</h3>
+                        <p class="text-gray-600 mb-4">Pacote com 500g de coxinhas de frango congeladas, prontas para
+                            fritar</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-pink-600">R$ 18,00</span>
+                            <button
+                                class="bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700 transition duration-300 add-to-cart-btn"
+                                data-name="Coxinha de frango 500g" data-price="18.00">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bolinha de Queijo -->
+                <div
+                    class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="./assets/BoliQueijo.png" alt="Bolinha de queijo" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Bolinha de Queijo 500g</h3>
+                        <p class="text-gray-600 mb-4">Pacote com 500g de bolinhas de queijo congeladas, ideais para
+                            fritar</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-pink-600">R$ 18,00</span>
+                            <button
+                                class="bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700 transition duration-300 add-to-cart-btn"
+                                data-name="Bolinha de queijo 500g" data-price="18.00">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mini Esfiha de Frango -->
+                <div
+                    class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="./assets/MiniEsfihaFrango.png" alt="Mini esfiha de frango"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Mini Esfiha de Frango 500g</h3>
+                        <p class="text-gray-600 mb-4">Pacote com 500g de mini esfihas de frango congeladas, perfeitas
+                            para aquecer</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-pink-600">R$ 18,00</span>
+                            <button
+                                class="bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700 transition duration-300 add-to-cart-btn"
+                                data-name="Mini esfiha de frango 500g" data-price="18.00">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!--Fim Produto Item-->
+        </section>
 
-            <!--Produto Item-->
-            <div class="flex gap-2  max-w-xl hover:bg-gray-300 rounded-lg">
-                <img src="./assets/BoloBrigGranuladoColor.png" alt="Bolo de Brigadeiro Colorido"
-                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
+        <section id="about" class="mb-16 bg-white rounded-lg shadow-md p-8">
+            <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Sobre Nós</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto">
+                Há mais de uma década, a Gasparini Confeitos vem adoçando a vida dos nossos clientes com receitas
+                tradicionais e inovadoras. Nossa paixão pela confeitaria se traduz em cada produto que fazemos, sempre
+                com ingredientes selecionados e muito amor.
+            </p>
+        </section>
 
-                <div>
-                    <p class="font-bold">Bolo de Brigadeiro <strong>(Encomenda)</strong></p>
-                    <p class="text-sm">Bolo de brigadeiro com granulado colorido</p>
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$ 30.00</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn"
-                            data-name="Bolo de brigadeiro granulado colorido" data-price="30.00">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
-                        </button>
-                    </div>
+        <section id="contact" class="bg-white rounded-lg shadow-md p-8">
+            <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Contato</h2>
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <p class="text-gray-600"><i class="fas fa-map-marker-alt text-pink-600 mr-2"></i> Rua Dr Joaquin
+                        Franco Garcia Nº1750, Votuporanga - SP</p>
+                    <p class="text-gray-600"><i class="fas fa-phone text-pink-600 mr-2"></i> (17) 99744-2270</p>
+                </div>
+                <div class="bg-pink-600 text-white px-3 py-3 rounded-full">
+                    <span class="font-medium">Horário de Funcionamento:</span>
+                    <span class="ml-2">Seg à Sab, 08:00 às 18:00</span>
                 </div>
             </div>
-            <!--Fim Produto Item-->
+        </section>
 
-            <!--Produto Item-->
-            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
-                <img src="./assets/BoloBrigComMorang.png" alt="Bolo de brgadeiro com morango"
-                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
+        <section id="location" class="bg-white rounded-lg shadow-md p-8 mt-6">
+            <h2 class="text-3xl font-bold text-center mb-3 text-gray-800">Voce pode nos encontrar aqui</h2>
+            <h4 class="text-center font-bold text-xl text-gray-600">Café da manhã de Segunda á Sexta</h4>
+            <div id="map" class="w-full h-96 md:h-128 lg:h-160 xl:h-192 mt-5 rounded-lg border-2 border-pink-600"></div>
+        </section>
+    </main>
 
-                <div>
-                    <p class="font-bold">Bolo de brigadeiro <strong>(Encomenda)</strong></p>
-                    <p class="text-sm">Bolo de brigadeiro com granulado tradicional e com pedaços de morangos</p>
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$ 45.00</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn"
-                            data-name="Bolo de brigadeiro com morango" data-price="45.00">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!--Fim Produto Item-->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Gasparini Confeitos. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
-            <!--Produto Item-->
-            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
-                <img src="./assets/BoloLimao.png" alt="Bolo de limão"
-                    class="w-28 h-30 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
-
-                <div>
-                    <p class="font-bold">Bolo de limão <strong>(Encomenda)</strong></p>
-                    <p class="text-sm">Bolo de limão com mouse de limão e raspas de limão</p>
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg mt-4">R$ 30.00</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Bolo de limão"
-                            data-price="30.00">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!--Fim Produto Item-->
-
-            <!--Produto Item-->
-            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
-                <img src="./assets/CremePada.png" alt="Creme de Padaria"
-                    class="w-28 h-30 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
-
-                <div>
-                    <p class="font-bold">Creme de padaria <strong>(Encomenda)</strong></p>
-                    <p class="text-sm">Uma sobremesa cremosa e doce, feita com leite, açúcar, ovos e farinha</p>
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg mt-2">R$ 20.00</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn mt-2"  data-name="Creme de padaria"
-                            data-price="20.00">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!--Fim Produto Item-->
-
-            <!--Produto Item-->
-            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
-                <img src="./assets/Pudim.png" alt="Pudim de leite condensado"
-                    class="w-28 h-30 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
-
-                <div>
-                    <p class="font-bold">Pudim de leite condensado <strong>(Encomenda)</strong></p>
-                    <p class="text-sm">Uma sobremesa suave e doce, feita com leite condensado, ovos e açúcar, com uma
-                        camada de caramelo.</p>
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$ 25.00</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Pudim de leite condensado"
-                            data-price="25.00">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!--Fim Produto Item-->
-
-            <!--Produto Item-->
-            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
-                <img src="./assets/Rosca.png" alt="Rosca"
-                    class="w-28 h-30 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
-
-                <div>
-                    <p class="font-bold">Rosca</p>
-                    <p class="text-sm">Uma rosca macia e doce, feita com leite condensado, coco e creme confeiteiro,
-                        ideal para um lanche ou café da manhã especial.</p>
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$ 8.00</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Rosca" data-price="8.00">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!--Fim Produto Item-->
-
-            <!--Produto Item-->
-            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
-                <img src="./assets/PaoC.png" alt="Pão caseiro assado"
-                    class="w-28 h-30 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
-
-                <div>
-                    <p class="font-bold">Pão caseiro</p>
-                    <p class="text-sm">Um pão macio e aromático, feito com ingredientes simples como farinha, água,
-                        fermento e sal, assado até obter uma crosta dourada e uma textura leve por dentro.
-                    <p>
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$ 15.00</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Pão caseiro"
-                            data-price="15.00">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!--Fim Produto Item-->
-
-            <!--Produto Item-->
-            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
-                <img src="./assets/PaoCasCong.png" alt="Pão caseiro congelado"
-                    class="w-28 h-230 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
-
-                <div>
-                    <p class="font-bold">Pão caseiro congelado (10 uni)</p>
-                    <p class="text-sm">Pão caseiro, preparado e congelado, que pode ser assado diretamente do freezer
-                        para obter uma textura fresca e macia com crosta dourada.
-                    <p>
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$ 21.00</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn"
-                            data-name="Pão caseiro congelado (10 uni)" data-price="21.00">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!--Fim Produto Item-->
-
-            <!--Produto Item-->
-            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
-                <img src="./assets/PaoQueijo.png" alt="Pão de queijo"
-                    class="w-28 h-30 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
-
-                <div>
-                    <p class="font-bold">Pão de queijo tradicional 1KG</p>
-                    <p class="text-sm">Pacote contendo 1 kg de pão de queijo congelado, pronto para assar e desfrutar de
-                        pequenas delícias crocantes e macias, feitas com queijo e polvilho.
-                    <p>
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg mt-4">R$ 20.00</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn mt-4"
-                            data-name="Pão de queijo tradicional 1KG" data-price="20.00">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!--Fim Produto Item-->
-
-            <!--Produto Item-->
-            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
-                <img src="./assets/CoxiFrango.png" alt="Coxinha de frango"
-                    class="w-28 h-30 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
-
-                <div>
-                    <p class="font-bold">Coxinha de frango 500g</p>
-                    <p class="text-sm">Pacote com 500 g de coxinhas de frango congeladas, prontas para fritar e servir
-                        como um petisco crocante e saboroso.
-                    <p>
-                    <div class="flex items-center justify-between mt-0">
-                        <p class="font-bold text-lg">R$ 18.00</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Coxinha de frango 500g"
-                            data-price="18.00">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!--Fim Produto Item-->
-
-            <!--Produto Item-->
-            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
-                <img src="./assets/BoliQueijo.png" alt="Bolinha de queijo"
-                    class="w-28 h-30 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
-
-                <div>
-                    <p class="font-bold">Bolinha de queijo 500g</p>
-                    <p class="text-sm">Pacote com 500 g de bolinhas de queijo congeladas, ideais para fritar e saborear
-                        como um aperitivo delicioso.
-                    <p>
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$ 18.00</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Bolinha de queijo 500g"
-                            data-price="18.00">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!--Fim Produto Item-->
-
-            <!--Produto Item-->
-            <div class="flex gap-2 max-w-xl hover:bg-gray-300 rounded-lg">
-                <img src="./assets/MiniEsfihaFrango.png" alt="Mini esfiha de frango"
-                    class="w-28 h-30 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
-
-                <div>
-                    <p class="font-bold">Mini esfiha de frango 500g</p>
-                    <p class="text-sm">Pacote com 500 g de esfihas de carne congeladas, perfeitas para aquecer no
-                        micro-ondas e desfrutar de um lanche prático e saboroso.
-                    <p>
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$ 18.00</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn"
-                            data-name="Mini esfiha de frango 500g" data-price="18.00">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!--Fim Produto Item-->
-
-        </main>
-
-    </div>
-    <!--fim Menu-->
-
-    <!--Modal Cart-->
-    <div class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden" id="cart-modal">
-        <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
-            <h2 class="text-center font-bold text-2xl mb-2">Meu Carrinho</h2>
-
-            <div id="cart-items" class="flex justify-between mb-2 flex-col"></div>
-
-            <p class="font-bold">Total: <span id="cart-total">0.00</span></p>
-
-            <p class="font-bold mt-3">Endereço de entrega</p>
-            <input type="text" placeholder="Digite seu endereço completo..." id="address"
-                class="w-full border-2 p-1 rounded my-1" />
-            <p class="text-red-500 hidden" id="address-warn">Digite seu endereço completo!</p>
-
-            <div class="flex items-center justify-between mt-5 w-full">
-                <button id="close-modal-btn">Fechar</button>
-                <button id="chekout-btn" class="bg-green-500 text-white px-4 py-1 rounded">Finalizar Pedido</button>
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
+        <div class="bg-white p-8 rounded-lg max-w-md w-full">
+            <h2 class="text-2xl font-bold mb-4">Seu Carrinho</h2>
+            <div id="cart-items" class="mb-4"></div>
+            <div class="font-bold mb-4">Total: R$ <span id="cart-total">0.00</span></div>
+            <input type="text" id="address" placeholder="Endereço de entrega" class="w-full p-2 mb-4 border rounded">
+            <div class="flex justify-between">
+                <button id="close-modal-btn"
+                    class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 transition duration-300">Fechar</button>
+                <button id="checkout-btn"
+                    class="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition duration-300">Finalizar
+                    Pedido</button>
             </div>
         </div>
     </div>
-    <!--Fim Modal Cart-->
 
-    <!--Botao Cart Footer-->
-    <footer class="w-full bg-red-500 py-2 fixed bottom-0 z-40 flex items-center justify-center">
-        <button class="flex items-center gap-2 text-white font-bold" id="cart-btn">
-            (<span id="cart-count">0</span>)
-            Veja meu carrinho
-            <i class="fa fa-cart-plus text-lg text-white"></i>
-        </button>
-    </footer>
-    <!--Fim Botao Cart Footer-->
+    <!--Popup Modal-->
+    <div id="popup-modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+            <h2 id="popup-title" class="text-lg font-bold mb-4"></h2>
+            <p id="popup-message" class="mb-6"></p>
+            <button id="popup-close-btn" class="bg-red-500 text-white px-4 py-2 rounded">Fechar</button>
+        </div>
+    </div>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVy_bQinwXRWkC2nIVrIev4AJVFICJMx0&callback=initMap"
+        async defer></script>
     <script src="script.js"></script>
 </body>
 
