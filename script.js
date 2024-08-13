@@ -12,8 +12,21 @@ const modal = document.getElementById("popup-modal");
 const modalTitle = document.getElementById("popup-title");
 const modalMessage = document.getElementById("popup-message");
 const modalCloseBtn = document.getElementById("popup-close-btn");
+const openMapModalBtn = document.getElementById('openMapModal');
+const mapModal = document.getElementById('mapModal');
+const closeMapModalBtn = document.getElementById('closeMapModal');
 
 let cart = [];
+
+openMapModalBtn.addEventListener('click', function () {
+    mapModal.classList.remove('hidden');
+    initMap(); // Inicializa o mapa quando o modal é aberto
+});
+
+// Close Map Modal
+closeMapModalBtn.addEventListener('click', function () {
+    mapModal.classList.add('hidden');
+});
 
 // Open Cart Modal
 cartBtn.addEventListener("click", function () {
@@ -121,7 +134,7 @@ addressInput.addEventListener("input", function (event) {
     }
 });
 
-//funcao popup modal
+// Show Popup Modal
 function showModal(title, message) {
     modalTitle.textContent = title;
     modalMessage.textContent = message;
@@ -168,7 +181,7 @@ checkoutBtn.addEventListener("click", function () {
     addressInput.value = "";
 });
 
-//Mapa
+// Initialize Map
 function initMap() {
     // Localização da Confeitaria (substitua com as coordenadas reais)
     const confeitariaLocation = { lat: -20.4063, lng: -49.9894 }; // Coordenadas da Confeitaria Gasparini
@@ -181,7 +194,7 @@ function initMap() {
 
     // Adiciona um marcador para a confeitaria
     new google.maps.Marker({
-        position: -20.437105 -49.987891,
+        position: confeitariaLocation,
         map: map,
         title: "Confeitaria Gasparini",
         icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
@@ -227,4 +240,10 @@ function checkOpen() {
 }
 
 // Update status every minute
+function updateStoreStatus() {
+    const status = document.getElementById("store-status");
+    status.textContent = checkOpen() ? "Aberto" : "Fechado";
+}
+
 setInterval(updateStoreStatus, 60000);
+updateStoreStatus(); // Initial call to set status on page load

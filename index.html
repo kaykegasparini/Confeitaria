@@ -30,7 +30,6 @@
                     <a href="#menu" class="text-gray-700 hover:text-pink-600 transition duration-300">Menu</a>
                     <a href="#about" class="text-gray-700 hover:text-pink-600 transition duration-300">Sobre</a>
                     <a href="#contact" class="text-gray-700 hover:text-pink-600 transition duration-300">Contato</a>
-                    <a href="#location" class="text-gray-700 hover:text-pink-600 transition duration-300">Localizaçâo</a>
                 </div>
                 <div class="flex-1 flex justify-end items-center">
                     <button id="cart-btn"
@@ -48,6 +47,25 @@
             <h1 class="text-4xl md:text-6xl font-bold mb-4 text-gray-800">Delícias Artesanais</h1>
             <p class="text-xl text-gray-600">Saboreie a doçura da vida com nossos confeitos especiais</p>
         </section>
+
+        <!-- Botão para abrir o modal -->
+        <div class="flxe flex-col justify-start">
+            <button id="openMapModal"
+                class="bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700 transition duration-300 mb-4">
+                <i class="fas fa-map-marker-alt text-white mr-2"></i>
+                Venha nos visitar
+            </button>
+            <h4 class="text-xl font-bold mb-8 text-gray-800">Temos café da manhã de Segunda á Sexta</h4>
+        </div>
+
+        <!-- Modal -->
+        <div id="mapModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50">
+            <div class="bg-white p-3 py-6 px-6 rounded-lg w-full max-w-4xl relative">
+                <button id="closeMapModal"
+                    class="absolute top-2 right-2 text-gray-600 hover:text-gray-900 text-xl font-bold">&times;</button>
+                <div id="map" style="height: 500px; width: 100%" class="border-2 rounded-xl border-pink-600"></div>
+            </div>
+        </div>
 
         <section id="menu" class="mb-16">
             <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Nosso Menu</h2>
@@ -178,6 +196,25 @@
                             <button
                                 class="bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700 transition duration-300 add-to-cart-btn"
                                 data-name="Rosca" data-price="8.00">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Caracol de Coco -->
+                <div
+                    class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="./assets/caracol.png" alt="Caracol" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Caracol de Coco</h3>
+                        <p class="text-gray-600 mb-4">Caracol de coco: espiral de massa doce recheada com coco, creme de
+                            confeiteiro e leite condensado.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-pink-600">R$ 3,00</span>
+                            <button
+                                class="bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700 transition duration-300 add-to-cart-btn"
+                                data-name="Caracol de Coco" data-price="3.00">
                                 Adicionar ao Carrinho
                             </button>
                         </div>
@@ -323,11 +360,11 @@
             </div>
         </section>
 
-        <section id="location" class="bg-white rounded-lg shadow-md p-8 mt-6">
+        <!--<section id="location" class="bg-white rounded-lg shadow-md p-8 mt-6">
             <h2 class="text-3xl font-bold text-center mb-3 text-gray-800">Voce pode nos encontrar aqui</h2>
             <h4 class="text-center font-bold text-xl text-gray-600">Café da manhã de Segunda á Sexta</h4>
             <div id="map" class="w-full h-96 md:h-128 lg:h-160 xl:h-192 mt-5 rounded-lg border-2 border-pink-600"></div>
-        </section>
+        </section>-->
     </main>
 
     <footer class="bg-gray-800 text-white py-8">
