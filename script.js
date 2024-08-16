@@ -236,7 +236,7 @@ window.onload = initMap;
 function checkOpen() {
     const now = new Date();
     const hour = now.getHours();
-    return hour >= 8 && hour < 22;
+    return hour >= 8 && hour < 18;
 }
 
 // Update status every minute
