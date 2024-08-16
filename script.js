@@ -170,7 +170,7 @@ checkoutBtn.addEventListener("click", function () {
 
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const message = encodeURIComponent(`Novo Pedido:\n\n${cartItems}\n\nTotal: R$${total.toFixed(2)}\n\nEndereço de Entrega: ${addressInput.value}`);
-    const phone = "17997442270";
+    const phone = "17982135155";
 
     window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
 
@@ -236,7 +236,7 @@ window.onload = initMap;
 function checkOpen() {
     const now = new Date();
     const hour = now.getHours();
-    return hour >= 8 && hour < 18;
+    return hour >= 8 && hour < 22;
 }
 
 // Update status every minute
