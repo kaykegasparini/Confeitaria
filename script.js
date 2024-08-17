@@ -145,6 +145,26 @@ modalCloseBtn.addEventListener("click", function () {
     modal.classList.add("hidden");
 });
 
+// Input Retirada ou Entrega
+let deliveryOption = "pickup"; // Default to pickup
+
+document.querySelectorAll('input[name="delivery-option"]').forEach((elem) => {
+    elem.addEventListener("change", function(event) {
+        const addressInput = document.getElementById("address");
+        const modal = document.getElementById("popup-modal");
+
+        deliveryOption = event.target.value;
+
+        if (deliveryOption === "delivery") {
+            addressInput.classList.remove("hidden");
+            
+        } else {
+            addressInput.classList.add("hidden");
+            modal.classList.add("hidden");
+        }
+    });
+});
+
 // Checkout
 checkoutBtn.addEventListener("click", function () {
     if (!checkOpen()) {
@@ -157,7 +177,7 @@ checkoutBtn.addEventListener("click", function () {
         return;
     }
 
-    if (addressInput.value === "") {
+    if (deliveryOption === "delivery" && addressInput.value === "") {
         addressInput.classList.add("border-red-500");
         showModal("Endereço", "Por favor, insira seu endereço de entrega.");
         return;
@@ -169,7 +189,13 @@ checkoutBtn.addEventListener("click", function () {
     ).join("\n");
 
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    const message = encodeURIComponent(`Novo Pedido:\n\n${cartItems}\n\nTotal: R$${total.toFixed(2)}\n\nEndereço de Entrega: ${addressInput.value}`);
+
+    let message;
+    if (deliveryOption === "pickup") {
+        message = encodeURIComponent(`Novo Pedido:\n\n${cartItems}\n\nTotal: R$${total.toFixed(2)}\n\nOpção: Retirada no local`);
+    } else {
+        message = encodeURIComponent(`Novo Pedido:\n\n${cartItems}\n\nTotal: R$${total.toFixed(2)}\n\nOpção: Entrega\n\nEndereço de entrega: ${addressInput.value}`);
+    }
     const phone = "17982135155";
 
     window.open(`https://wa.me/${phone}?text=${message}`, "_blank");

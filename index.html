@@ -381,12 +381,6 @@
                 </div>
             </div>
         </section>
-
-        <!--<section id="location" class="bg-white rounded-lg shadow-md p-8 mt-6">
-            <h2 class="text-3xl font-bold text-center mb-3 text-gray-800">Voce pode nos encontrar aqui</h2>
-            <h4 class="text-center font-bold text-xl text-gray-600">Café da manhã de Segunda á Sexta</h4>
-            <div id="map" class="w-full h-96 md:h-128 lg:h-160 xl:h-192 mt-5 rounded-lg border-2 border-pink-600"></div>
-        </section>-->
     </main>
 
     <footer class="bg-gray-800 text-white py-8">
@@ -401,7 +395,20 @@
             <h2 class="text-2xl font-bold mb-4">Seu Carrinho</h2>
             <div id="cart-items" class="mb-4"></div>
             <div class="font-bold mb-4">Total: R$ <span id="cart-total">0.00</span></div>
-            <input type="text" id="address" placeholder="Endereço de entrega" class="w-full p-2 mb-4 border rounded">
+
+            <h4 class="text-lg font-bold mb-4">Opção</h4>
+            <div class="mb-4">
+                <label class="mr-4">
+                    <input type="radio" name="delivery-option" value="pickup" checked> Retirada
+                </label>
+                <label>
+                    <input type="radio" name="delivery-option" value="delivery"> Entrega
+                </label>
+            </div>
+
+            <input type="text" id="address" placeholder="Endereço de entrega"
+                class="w-full p-2 mb-4 border rounded hidden">
+
             <div class="flex justify-between">
                 <button id="close-modal-btn"
                     class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 transition duration-300">Fechar</button>
@@ -410,6 +417,7 @@
                     Pedido</button>
             </div>
         </div>
+    </div>
     </div>
 
     <!--Popup Modal-->
