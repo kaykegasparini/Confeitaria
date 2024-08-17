@@ -184,7 +184,7 @@ checkoutBtn.addEventListener("click", function () {
 // Initialize Map
 function initMap() {
     // Localização da Confeitaria (substitua com as coordenadas reais)
-    const confeitariaLocation = { lat: -20.4063, lng: -49.9894 }; // Coordenadas da Confeitaria Gasparini
+    const confeitariaLocation = { lat: -20.4371041, lng: -49.9878848 }; // Coordenadas da Confeitaria Gasparini
 
     // Cria o mapa centrado na localização da confeitaria
     const map = new google.maps.Map(document.getElementById("map"), {
