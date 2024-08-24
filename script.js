@@ -168,7 +168,7 @@ document.querySelectorAll('input[name="delivery-option"]').forEach((elem) => {
 // Checkout
 checkoutBtn.addEventListener("click", function () {
     if (!checkOpen()) {
-        showModal("Fechado", "Desculpe, estamos fechados no momento. Nosso horário de funcionamento é das 8h às 18h.");
+        showModal("Fechado", "Desculpe, estamos fechados no momento. Nosso horário de funcionamento é das 8h às 18h, de segunda a sábado.");
         return;
     }
 
@@ -261,8 +261,20 @@ window.onload = initMap;
 // Check if store is open
 function checkOpen() {
     const now = new Date();
+    const day = now.getDay();// 0 = Domingo, 1 = Segunda, ..., 6 = Sábado
     const hour = now.getHours();
-    return hour >= 8 && hour < 18;
+    
+    //Verifica se é Domingo
+    if (day === 0) {
+        return false;
+    }
+
+    if (hour < 8 || hour >= 18) {
+        return false;
+    }
+
+    return true;
+
 }
 
 // Update status every minute
