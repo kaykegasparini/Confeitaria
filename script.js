@@ -207,56 +207,6 @@ checkoutBtn.addEventListener("click", function () {
     addressInput.value = "";
 });
 
-// Initialize Map
-function initMap() {
-    // Localização da Confeitaria (substitua com as coordenadas reais)
-    const confeitariaLocation = { lat: -20.4371041, lng: -49.9878848 }; // Coordenadas da Confeitaria Gasparini
-
-    // Cria o mapa centrado na localização da confeitaria
-    const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 15,
-        center: confeitariaLocation,
-    });
-
-    // Adiciona um marcador para a confeitaria
-    new google.maps.Marker({
-        position: confeitariaLocation,
-        map: map,
-        title: "Confeitaria Gasparini",
-        icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
-    });
-
-    // Obtém a localização do usuário
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            function (position) {
-                const userLocation = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                };
-
-                // Adiciona um marcador para a localização do usuário
-                new google.maps.Marker({
-                    position: userLocation,
-                    map: map,
-                    title: "Sua Localização",
-                    icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
-                });
-
-                // Centraliza o mapa na localização do usuário
-                map.setCenter(userLocation);
-            },
-            function (error) {
-                console.error("Erro ao obter a localização: " + error.message);
-            }
-        );
-    } else {
-        console.error("Geolocalização não é suportada neste navegador.");
-    }
-}
-
-// Inicializa o mapa quando a página é carregada
-window.onload = initMap;
 
 // Check if store is open
 function checkOpen() {
